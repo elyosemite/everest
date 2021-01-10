@@ -10,6 +10,15 @@ func main() {
 		33: "GFG",
 		44: "Igor Melo",
 	}
+	// Using channel
+	chnl := make(chan int)
+	go func() {
+		chnl <- 100
+		chnl <- 1000
+		chnl <- 10000
+		chnl <- 100000
+		close(chnl)
+	}()
 
 	for i := 0; i < 4; i++ {
 		fmt.Println("I'm back-end Developer")
@@ -36,6 +45,11 @@ func main() {
 	// Loop in maps
 	for key, value := range mmap {
 		fmt.Println(key, value)
+	}
+
+	// Loop in channel
+	for i := range chnl {
+		fmt.Println(i)
 	}
 
 }
