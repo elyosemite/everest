@@ -7,6 +7,8 @@ func main() {
 	var year int = 2021
 
 	if(year == 2021) {
-		fmt.Println("My new age is : %d", (myAge+1))
+		fmt.Println("My new age is :",(myAge+1))
+	} else {
+		fmt.Println("Year is different")
 	}
 }
