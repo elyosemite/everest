@@ -8,10 +8,7 @@ func main() {
 	a := 1
 	b := "Yuri Melo"
 	c := true
-	d = `Yuri
-	dos
-	Santos
-	Melo`
+	d := `Yuri dos Santos Melo`
 	e := 3.1415
 
 	fmt.Printf("%v\n", a)
@@ -19,5 +16,13 @@ func main() {
 	fmt.Printf("%v\n", c)
 	fmt.Printf("%v\n", d)
 	fmt.Printf("%v\n", e)
+
+
+	fmt.Println("Show me datatypes")
+	fmt.Printf("%T\n", a)
+	fmt.Printf("%T\n", b)
+	fmt.Printf("%T\n", c)
+	fmt.Printf("%T\n", d)
+	fmt.Printf("%T\n", e)
 
 }
