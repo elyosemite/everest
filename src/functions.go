@@ -1,13 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func Soma(a int, b int) int {
+func Sum(a int, b int) int {
 	return a+b
 }
 
 func main() {
-	result := Soma(1,1)
+	var firstNumber int
+	var secondNumber int
 
-	fmt.Printf("Type of \'result\' variable is %T\n", result)
+	fmt.Scanln(&firstNumber)
+	fmt.Scanln(&secondNumber)
+
+	result := Sum(firstNumber, secondNumber)
+	
+	fmt.Println(result)
+
+	fmt.Printf("Type of \"result\" variable is %T\n", result)
 }
