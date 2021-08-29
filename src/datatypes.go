@@ -24,5 +24,4 @@ func main() {
 	fmt.Printf("%T\n", c)
 	fmt.Printf("%T\n", d)
 	fmt.Printf("%T\n", e)
-
 }
