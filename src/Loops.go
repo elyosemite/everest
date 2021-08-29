@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Yuri está aqui
+const favColor string = "blue"
 
 func main() {
 	i := 0
@@ -22,7 +22,7 @@ func main() {
 	}
 	fmt.Println(i)
 
-	// INfinity loop
+	// Infinity loop
 	/*for {
 		fmt.Println("I am infinity loop")
 	}*/
@@ -40,4 +40,39 @@ func main() {
 		fmt.Println(key, value)
 	}
 
+	// Show the sharks
+	ShowMeSharks()
+	ShowMyFavoriteColor()
+}
+
+func ShowMeSharks() {
+	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+
+	for _, shark := range sharks {
+		fmt.Println(shark)
+	}
+}
+
+func ShowMyFavoriteColor() {
+	var guess string
+
+	for {
+		// Ask the user to guess my favorite color
+		fmt.Println("Guess my favorite color: ")
+
+		if _, err := fmt.Scanln(&guess); err != nil {
+			fmt.Printf("%s\n", err)
+			return
+		}
+
+		// Did they guess the correct color?
+		if favColor == guess {
+			// They guessed it!
+			fmt.Printf("%q is my favorite color!\n", favColor)
+			return
+		}
+
+		// Wrong! Have them guess again
+		fmt.Printf("Sorry, %q is not my favorite color. Guess again.\n", guess)
+	}
 }
