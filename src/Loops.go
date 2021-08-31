@@ -43,6 +43,59 @@ func main() {
 	// Show the sharks
 	ShowMeSharks()
 	ShowMyFavoriteColor()
+
+	// Loops
+	ForClauseLoop()
+	NoRangeClauseLoop()
+	RangeClauseLoop()
+}
+
+/*
+	for [ Initial Statement ] ; [ Condition ] ; [ Post Statement ] {
+		[Action]
+	}
+*/
+func ForClauseLoop() {
+	fmt.Println("Start. ForClause: ")
+	for i := 0; i< 5; i++ {
+		fmt.Println(i)
+	}
+	fmt.Println("End. ForClause: ")
+}
+
+func NoRangeClauseLoop() {
+	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+
+	for i := 0; i < len(sharks); i++ {
+		fmt.Println(sharks[i])
+	}
+}
+
+func RangeClauseLoop() {
+	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+
+	for i, shark := range sharks {
+		fmt.Println(i, shark)
+	}
+
+	// Without i variable
+	for _, shark := range sharks {
+		fmt.Println(shark)
+	}
+
+	// Iterate over item
+	for range sharks {
+		sharks = append(sharks, "shark")
+	}
+
+	fmt.Printf("%q\n", sharks)
+
+	// Iterate over map
+	sammyShark := map[string]string{"name": "Sammy", "animal": "shark", "color": "blue", "location": "ocean"}
+
+    for key, value := range sammyShark {
+        fmt.Println(key + ": " + value)
+    }
 }
 
 func ShowMeSharks() {
