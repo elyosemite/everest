@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"bufio"
-	"strings"
 )
 
 func Menu() {
@@ -17,25 +16,41 @@ func Menu() {
 	fmt.Println("\t7. Pedir Empréstimo\n\n")
 }
 
-func Enter(){
+func StartUp(){
 	Menu()
 	fmt.Println("Escolha sua operação:")
-	reader := bufio.NewReader(os.Stdin)
-	text, _ := reader.ReadString('\n')
-	text = strings.Replace(text, "\n", "", -1)
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	input := scanner.Text()
   	
-	switch text {
+	switch input {
 		case "1":
-			fmt.Println("opção 1")
+			fmt.Printf("\nopção 1\n")
 			break
 		case "2":
-			fmt.Println("opção 2")
+			fmt.Printf("\nopção 2\n")
 			break
+		case "3":
+			fmt.Printf("\nopção 3\n")
+			break
+		case "4":
+			fmt.Printf("\nopção 4\n")
+			break
+		case "5":
+			fmt.Printf("\nopção 5\n")
+			break
+		case "6":
+			fmt.Printf("\nopção 6\n")
+			break
+		case "7":
+			fmt.Printf("\nopção 7\n")
+			break
+
 	}
 
 }
 
 func main() {
 	fmt.Println("Hello, Welcome to my Bank system\n\n")
-	Enter()
+	StartUp()
 }
