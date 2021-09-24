@@ -16,7 +16,12 @@ func Menu() {
 	fmt.Println("\t7. Pedir Empréstimo\n\n")
 }
 
-func StartUp(){
+func Saldo() int {
+	return 1000
+}
+ // Menus
+
+func StartUp() {
 	Menu()
 	fmt.Println("Escolha sua operação:")
 	scanner := bufio.NewScanner(os.Stdin)
@@ -25,32 +30,30 @@ func StartUp(){
   	
 	switch input {
 		case "1":
-			fmt.Printf("\nopção 1\n")
+			fmt.Printf("Seu saldo é: %v", Saldo())
 			break
 		case "2":
-			fmt.Printf("\nopção 2\n")
+			fmt.Printf("\nDepositar\n")
 			break
 		case "3":
-			fmt.Printf("\nopção 3\n")
+			fmt.Printf("\nTransferir\n")
 			break
 		case "4":
-			fmt.Printf("\nopção 4\n")
+			fmt.Printf("\nEmpréstimo\n")
 			break
 		case "5":
-			fmt.Printf("\nopção 5\n")
+			fmt.Printf("\nConta Polpança\n")
 			break
 		case "6":
-			fmt.Printf("\nopção 6\n")
+			fmt.Printf("\nConta Corrente\n")
 			break
 		case "7":
-			fmt.Printf("\nopção 7\n")
+			fmt.Printf("\nPedir Empréstimo\n")
 			break
-
 	}
-
 }
 
 func main() {
-	fmt.Println("Hello, Welcome to my Bank system\n\n")
+	fmt.Println("Hello, Welcome to my Bank System\n\n")
 	StartUp()
 }
