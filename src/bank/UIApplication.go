@@ -16,10 +16,27 @@ func Menu() {
 	fmt.Println("\t7. Pedir Empréstimo\n\n")
 }
 
-func Saldo() int {
-	return 1000
+var limite float64 = 15000.00
+var saldo float64 = 0.0
+
+func Saldo() float64 {
+	return saldo
 }
- // Menus
+
+func Depositar() {
+	valor := 0.0
+	fmt.Println("Valor para depósito: ")
+	fmt.Scanf("%f", &valor)
+
+	if saldo + valor > limite {
+		fmt.Printf("Você atingiu seu limite!")
+		return
+	} else {
+		saldo += valor
+		fmt.Printf("Você depositou: R$ %f\n", valor)
+		fmt.Printf("Saldo atual: R$ %f\n", saldo)
+	}
+}
 
 func StartUp() {
 	Menu()
@@ -30,10 +47,12 @@ func StartUp() {
   	
 	switch input {
 		case "1":
-			fmt.Printf("Seu saldo é: %v", Saldo())
+			fmt.Printf("Seu saldo é: %f\n", Saldo())
+			StartUp()
 			break
 		case "2":
-			fmt.Printf("\nDepositar\n")
+			Depositar()
+			StartUp()
 			break
 		case "3":
 			fmt.Printf("\nTransferir\n")
