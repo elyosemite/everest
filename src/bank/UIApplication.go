@@ -7,13 +7,13 @@ import (
 )
 
 func Menu() {
-	fmt.Println("\t1. Ver saldo da conta")
-	fmt.Println("\t2. Depositar")
-	fmt.Println("\t3. Transferir")
-	fmt.Println("\t4. Empréstimo")
-	fmt.Println("\t5. Conta Polpança")
-	fmt.Println("\t6. Conta corrente")
-	fmt.Println("\t7. Pedir Empréstimo\n\n")
+	fmt.Println("1. Ver saldo da conta")
+	fmt.Println("2. Depositar")
+	fmt.Println("3. Transferir")
+	fmt.Println("4. Empréstimo")
+	fmt.Println("5. Conta Polpança")
+	fmt.Println("6. Conta corrente")
+	fmt.Println("7. Pedir Empréstimo\n")
 }
 
 var limite float64 = 15000.00
@@ -30,7 +30,6 @@ func Depositar() {
 
 	if saldo + valor > limite {
 		fmt.Printf("Você atingiu seu limite!")
-		return
 	} else {
 		saldo += valor
 		fmt.Printf("Você depositou: R$ %f\n", valor)
