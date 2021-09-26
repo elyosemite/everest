@@ -16,7 +16,7 @@ func Menu() {
 	fmt.Println("7. Pedir Empréstimo\n")
 }
 
-var limite float64 = 15000.00
+var limite float64 = 1_5000.00
 var saldo float64 = 0.0
 
 func Saldo() float64 {
