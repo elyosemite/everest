@@ -1,8 +1,8 @@
-package main
+package src
 
 import "fmt"
 
-func main() {
+func Datatypes() {
 	fmt.Println("Printing varaible value")
 
 	a := 1
@@ -16,7 +16,6 @@ func main() {
 	fmt.Printf("%v\n", c)
 	fmt.Printf("%v\n", d)
 	fmt.Printf("%v\n", e)
-
 
 	fmt.Println("Show me datatypes")
 	fmt.Printf("%T\n", a)

@@ -1,8 +1,8 @@
-package main
+package fundamentals
 
 import "fmt"
 
-func main() {
+func String() {
 	interpreted_string := "Hello, how are you?\nI'm Software Developer."
 	literal_string := `"Hello, how are you?\nI'm Software Developer."`
 

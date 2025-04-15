@@ -1,11 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/elyosemite/everest/src"
 
 func main() {
-  // string
-  var softwareengineer string = "El Yosemite"
-
-  fmt.Println(softwareengineer)
-  fmt.Println("Hello guys, I'm Senior Software Engineer")
+	src.PlayWithPointers()
 }

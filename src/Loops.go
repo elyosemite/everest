@@ -1,13 +1,13 @@
-package main
+package src
 
 import "fmt"
 
 const favColor string = "blue"
 
-func main() {
+func Loops() {
 	i := 0
 	rvariable := []string{"Yuri Melo", "Pedro Da Silva", "Kim Jong un"}
-	mmap := map[int]string {
+	mmap := map[int]string{
 		22: "Yuri Melo",
 		33: "GFG",
 		44: "Igor Melo",
@@ -57,14 +57,14 @@ func main() {
 */
 func ForClauseLoop() {
 	fmt.Println("Start. ForClause: ")
-	for i := 0; i< 5; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println(i)
 	}
 	fmt.Println("End. ForClause: ")
 }
 
 func NoRangeClauseLoop() {
-	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+	sharks := []string{"hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem"}
 
 	for i := 0; i < len(sharks); i++ {
 		fmt.Println(sharks[i])
@@ -72,7 +72,7 @@ func NoRangeClauseLoop() {
 }
 
 func RangeClauseLoop() {
-	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+	sharks := []string{"hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem"}
 
 	for i, shark := range sharks {
 		fmt.Println(i, shark)
@@ -93,13 +93,13 @@ func RangeClauseLoop() {
 	// Iterate over map
 	sammyShark := map[string]string{"name": "Sammy", "animal": "shark", "color": "blue", "location": "ocean"}
 
-    for key, value := range sammyShark {
-        fmt.Println(key + ": " + value)
-    }
+	for key, value := range sammyShark {
+		fmt.Println(key + ": " + value)
+	}
 }
 
 func ShowMeSharks() {
-	sharks := []string{ "hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem" }
+	sharks := []string{"hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem"}
 
 	for _, shark := range sharks {
 		fmt.Println(shark)

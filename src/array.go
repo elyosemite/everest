@@ -1,8 +1,8 @@
-package main
+package src
 
 import "fmt"
 
-func main() {
+func Arrays() {
 	// The capacity of an array is defined at creation time.
 
 	coral := [3]string{"blue coral", "staghorn coral", "pillar coral"}

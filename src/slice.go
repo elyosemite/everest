@@ -1,8 +1,8 @@
-package main
+package src
 
 import "fmt"
 
-func main() {
+func Slices() {
 	// My slice type
 	// []int{-3, -2, -1, 0, 1, 2, 3}
 	seaCreatures := []string{"shark", "cuttlefish", "squid", "mantis shrimp"}

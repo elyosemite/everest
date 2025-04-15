@@ -1,10 +1,10 @@
-package main
+package fundamentals
 
 import "fmt"
 
 var my_name = "Yuri Melo"
 
-func main() {
+func Operator() {
 	x := 10
 	y := "Yuri Melo, Software Developer"
 

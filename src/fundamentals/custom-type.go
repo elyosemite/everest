@@ -1,4 +1,4 @@
-package main
+package fundamentals
 
 import "fmt"
 
@@ -6,7 +6,7 @@ type hotdog int
 
 var my_own_hotdog hotdog = 10
 
-func main() {
+func MyCustomTypes() {
 	my_other_hotdog := 10
 
 	fmt.Printf("%v\n", my_other_hotdog)
