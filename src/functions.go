@@ -3,6 +3,7 @@ package src
 import (
 	"errors"
 	"fmt"
+	"time"
 )
 
 func Sum(a int, b int) int {
@@ -31,4 +32,8 @@ func PlayWithPointers() {
 	fmt.Println("pointer value:", *pointer)
 	pointer = &saphira
 	fmt.Println("pointer", pointer)
+}
+
+func GetHour() string {
+	return time.Now().Format("15:04:05")
 }

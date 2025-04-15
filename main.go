@@ -1,7 +1,12 @@
 package main
 
-import "github.com/elyosemite/everest/src"
+import (
+	"fmt"
+
+	"github.com/elyosemite/everest/src"
+)
 
 func main() {
 	src.PlayWithPointers()
+	fmt.Println(src.GetHour())
 }
