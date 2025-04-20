@@ -1,12 +1,19 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 
-	"github.com/elyosemite/everest/src"
+	"github.com/elyosemite/everest/src/bank"
 )
 
 func main() {
-	src.PlayWithPointers()
-	fmt.Println(src.GetHour())
+	bank.StartUp()
+	// src.PlayWithPointers()
+	// fmt.Println(src.GetHour())
+
+	// payload := []byte("Hello, World!")
+
+	// if err := src.DoSometingWithBytes(payload); err != nil {
+	// 	log.Fatal(err)
+	// }
 }
