@@ -13,65 +13,54 @@ func Menu() {
 	fmt.Println("4. Empréstimo")
 	fmt.Println("5. Conta Polpança")
 	fmt.Println("6. Conta corrente")
-	fmt.Println("7. Pedir Empréstimo\n")
+	fmt.Println("7. Pedir Empréstimo")
 }
 
-var limite float64 = 1_5000.00
+var limite float64 = 1_500.00
 var saldo float64 = 0.0
 
-func Saldo() float64 {
-	return saldo
+func GetSaldo() {
+	fmt.Printf("\n====== Seu saldo é: %.2f ======\n\n", saldo)
 }
 
 func Depositar() {
 	valor := 0.0
-	fmt.Println("Valor para depósito: ")
+	fmt.Print("Valor para depósito :> ")
 	fmt.Scanf("%f", &valor)
 
+	bufio.NewReader(os.Stdin).ReadBytes('\n')
+
 	if saldo+valor > limite {
-		fmt.Printf("Você atingiu seu limite!")
+		fmt.Printf("\n====== Você atingiu seu limite! ======\n\n")
 	} else {
 		saldo += valor
-		fmt.Printf("Você depositou: R$ %f\n", valor)
-		fmt.Printf("Saldo atual: R$ %f\n", saldo)
+		fmt.Printf("\n====== Você depositou: R$ %.2f ======\n\n", valor)
 	}
 }
 
 func StartUp() {
 	Menu()
-	fmt.Println("Escolha sua operação:")
+	fmt.Print("\nEscolha sua operação :> ")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	input := scanner.Text()
 
 	switch input {
 	case "1":
-		fmt.Printf("Seu saldo é: %f\n", Saldo())
+		GetSaldo()
 		StartUp()
-		break
 	case "2":
 		Depositar()
 		StartUp()
-		break
 	case "3":
 		fmt.Printf("\nTransferir\n")
-		break
 	case "4":
 		fmt.Printf("\nEmpréstimo\n")
-		break
 	case "5":
 		fmt.Printf("\nConta Polpança\n")
-		break
 	case "6":
 		fmt.Printf("\nConta Corrente\n")
-		break
 	case "7":
 		fmt.Printf("\nPedir Empréstimo\n")
-		break
 	}
-}
-
-func main() {
-	fmt.Println("Hello, Welcome to my Bank System\n\n")
-	StartUp()
 }
