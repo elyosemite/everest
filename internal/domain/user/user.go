@@ -14,11 +14,11 @@ type User struct {
 	name     string
 	email    string
 	identity string
-	address  address.Address
+	address  []*address.Address
 	accounts []*account.Account
 }
 
-func NewUser(name, email, document string, address address.Address) (*User, error) {
+func NewUser(name, email, document string) (*User, error) {
 	if err := validateUser(name, email, document); err != nil {
 		return nil, err
 	}
@@ -27,7 +27,6 @@ func NewUser(name, email, document string, address address.Address) (*User, erro
 		name:     strings.TrimSpace(name),
 		email:    strings.ToLower(strings.TrimSpace(email)),
 		identity: strings.TrimSpace(document),
-		address:  address,
 	}, nil
 }
 
