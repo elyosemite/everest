@@ -83,7 +83,7 @@ func (u *User) Accounts() []account.Account {
 	return accounts
 }
 
-func (a *Address) AddAddress(address *address.Address) error {
+func (a *User) AddAddress(address *address.Address) error {
 	if address == nil {
 		return errors.New("address cannot be nil")
 	}
