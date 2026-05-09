@@ -8,12 +8,13 @@ import (
 
 func Menu() {
 	fmt.Println("1. Ver saldo da conta")
-	fmt.Println("2. Depositar")
-	fmt.Println("3. Transferir")
-	fmt.Println("4. Empréstimo")
-	fmt.Println("5. Conta Polpança")
-	fmt.Println("6. Conta corrente")
-	fmt.Println("7. Pedir Empréstimo")
+	fmt.Println("2. Criar conta")
+	fmt.Println("3. Depositar")
+	fmt.Println("4. Transferir")
+	fmt.Println("5. Empréstimo")
+	fmt.Println("6. Conta Polpança")
+	fmt.Println("7. Conta corrente")
+	fmt.Println("8. Pedir Empréstimo")
 }
 
 var limite float64 = 1_500.00
