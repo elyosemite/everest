@@ -13,6 +13,25 @@ type myOwnAccount struct {
 	wantErr     bool
 }
 
+func TestSingleAccount(t *testing.T) {
+	myAccount := myOwnAccount{
+		name:        "fds",
+		accountType: account.Savings,
+		balance:     12,
+		wantErr:     false,
+	}
+
+	t.Run(account.name, func(t *testing.T) {
+		foo, err := account.NewAccount(myAccount.name)
+		if account.wantErr {
+			if err == nil {
+				t.Fatalf("expected error, got nil")
+				return
+			}
+		}
+	})
+}
+
 func TestNewAccount(t *testing.T) {
 	account_test_cases := []myOwnAccount{
 		{"checking with zero balance", account.Checking, 0, false},
