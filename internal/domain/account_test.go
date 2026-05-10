@@ -62,3 +62,10 @@ func TestAccountType_String(t *testing.T) {
 		})
 	}
 }
+
+func TestNewAccount_NegativeBalanceReturnsError(t *testing.T) {
+	_, err := account.NewAccount("user-1", account.Checking, -1)
+	if err == nil {
+		t.Fatalf("expected error for negative balance")
+	}
+}
