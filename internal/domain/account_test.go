@@ -42,11 +42,13 @@ func TestNewAccount(t *testing.T) {
 	}
 }
 
+type accountTypeStringCase struct {
+	t    account.AccountType
+	want string
+}
+
 func TestAccountType_String(t *testing.T) {
-	tests := []struct {
-		t    account.AccountType
-		want string
-	}{
+	tests := []accountTypeStringCase{
 		{account.Checking, "Conta Corrente"},
 		{account.Savings, "Conta Poupança"},
 		{account.AccountType(99), "Conta desconhecida"},
