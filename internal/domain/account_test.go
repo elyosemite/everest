@@ -14,16 +14,16 @@ type myOwnAccount struct {
 }
 
 func TestNewAccount(t *testing.T) {
-	tests := []myOwnAccount{
+	account_test_cases := []myOwnAccount{
 		{"checking with zero balance", account.Checking, 0, false},
 		{"savings with positive balance", account.Savings, 500.0, false},
 		{"negative balance returns error", account.Checking, -1, true},
 	}
 
-	for _, tc := range tests {
-		t.Run(tc.name, func(t *testing.T) {
-			a, err := account.NewAccount("user-1", tc.accountType, tc.balance)
-			if tc.wantErr {
+	for _, testCase := range account_test_cases {
+		t.Run(testCase.name, func(t *testing.T) {
+			a, err := account.NewAccount("user-1", testCase.accountType, testCase.balance)
+			if testCase.wantErr {
 				if err == nil {
 					t.Fatal("expected error, got nil")
 				}
@@ -32,11 +32,11 @@ func TestNewAccount(t *testing.T) {
 			if err != nil {
 				t.Fatalf("ünexpected error: %v", err)
 			}
-			if a.Type() != tc.accountType {
-				t.Errorf("got type %v, want %v", a.Type(), tc.accountType)
+			if a.Type() != testCase.accountType {
+				t.Errorf("got type %v, want %v", a.Type(), testCase.accountType)
 			}
-			if a.Balance() != tc.balance {
-				t.Errorf("got balance %v, want %v", a.Balance(), tc.balance)
+			if a.Balance() != testCase.balance {
+				t.Errorf("got balance %v, want %v", a.Balance(), testCase.balance)
 			}
 		})
 	}
