@@ -6,25 +6,29 @@ import (
 )
 
 type Account struct {
-	id        string
-	userID    string
-	balance   float64
-	createdAt time.Time
-	active    bool
+	id          string
+	userID      string
+	accountType AccountType
+	balance     float64
+	createdAt   time.Time
+	active      bool
 }
 
-func NewAccount(userID string, initialBalance float64) (*Account, error) {
+func NewAccount(userID string, accountType AccountType, initialBalance float64) (*Account, error) {
 	if initialBalance < 0 {
 		return nil, errors.New("initial balance cannot be negative")
 	}
 
 	return &Account{
-		userID:    userID,
-		balance:   initialBalance,
-		createdAt: time.Now().UTC(),
-		active:    true,
+		userID:      userID,
+		accountType: accountType,
+		balance:     initialBalance,
+		createdAt:   time.Now().UTC(),
+		active:      true,
 	}, nil
 }
+
+func (a *Account) Type() AccountType { return a.accountType }
 
 func (a *Account) Deposit(amount float64) error {
 	if amount <= 0 {
