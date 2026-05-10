@@ -5,7 +5,3 @@ type Customer struct {
 	cpf   string
 	email string
 }
-
-func cleaDigitals(s string) string {
-
-}
