@@ -56,3 +56,11 @@ func (a *Account) Balance() float64 {
 func (a *Account) Deactivate() {
 	a.active = false
 }
+
+func (a *Account) ID() string {
+	return a.id
+}
+
+func (a *Account) UserID() string {
+	return a.userID
+}
