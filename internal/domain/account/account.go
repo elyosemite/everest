@@ -3,6 +3,8 @@ package account
 import (
 	"errors"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type Account struct {
@@ -20,6 +22,7 @@ func NewAccount(userID string, accountType AccountType, initialBalance float64) 
 	}
 
 	return &Account{
+		id:          uuid.New().String(),
 		userID:      userID,
 		accountType: accountType,
 		balance:     initialBalance,
