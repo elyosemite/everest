@@ -12,6 +12,7 @@ Projeto iniciado há ~5 anos como caderno de estudos de Go. Está sendo ativamen
 ## Exigências
 - Nunca edita um arquivo se não for pedido;
 - Se eu pedir algum exemplo de código sempre escreva no temrinal o código
+- Por enquanto, ao gerar código não use recursos avançados tais como sync, gorountines, concorrência, etc
 
 ## Arquitetura
 
