@@ -14,22 +14,13 @@ type myOwnAccount struct {
 }
 
 func TestSingleAccount(t *testing.T) {
-	myAccount := myOwnAccount{
-		name:        "fds",
-		accountType: account.Savings,
-		balance:     12,
-		wantErr:     false,
+	a, err := account.NewAccount("user-1", account.Savings, 12)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
 	}
-
-	t.Run(account.name, func(t *testing.T) {
-		foo, err := account.NewAccount(myAccount.name)
-		if account.wantErr {
-			if err == nil {
-				t.Fatalf("expected error, got nil")
-				return
-			}
-		}
-	})
+	if a.Balance() != 12 {
+		t.Errorf("got balance %v, want %v", a.Balance(), 12)
+	}
 }
 
 func TestNewAccount(t *testing.T) {
