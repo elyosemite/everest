@@ -19,12 +19,12 @@ func TestInMemoryAccountRepository_Save_And_FindByID(t *testing.T) {
 		t.Fatalf("unexpected error saving account: %v", err)
 	}
 
-	found, err := repo.FindByID("account-1")
+	found, err := repo.FindByID(a.ID())
 	if err != nil {
 		t.Fatalf("unexpected error finding account: %v", err)
 	}
-	if found.ID() != "account-1" {
-		t.Errorf("got ID %q, want %q", found.ID(), "account-1")
+	if found.ID() != a.ID() {
+		t.Errorf("got ID %q, want %q", found.ID(), a.ID())
 	}
 	if found.Balance() != 100 {
 		t.Errorf("got balance %v, want %v", found.Balance(), 100)
