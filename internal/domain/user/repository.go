@@ -2,5 +2,5 @@ package user
 
 type Repository interface {
 	Save(user *User) error
-	FindIdID(id string) (*User, error)
+	FindByID(id string) (*User, error)
 }
