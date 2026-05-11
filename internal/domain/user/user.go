@@ -5,6 +5,8 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/google/uuid"
+
 	account "github.com/elyosemite/everest/internal/domain/account"
 	address "github.com/elyosemite/everest/internal/domain/address"
 )
@@ -24,6 +26,7 @@ func NewUser(name, email, document string) (*User, error) {
 	}
 
 	return &User{
+		id:       uuid.New().String(),
 		name:     strings.TrimSpace(name),
 		email:    strings.ToLower(strings.TrimSpace(email)),
 		identity: strings.TrimSpace(document),
