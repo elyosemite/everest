@@ -24,7 +24,7 @@ func (r *InMemoryAccountRepository) Save(a *account.Account) error {
 func (r *InMemoryAccountRepository) FindByID(id string) (*account.Account, error) {
 	a, ok := r.store[id]
 	if !ok {
-		return nil, errors.New("account not found")
+		return nil, errors.New("account not found. You can create one with 2 option in menu.")
 	}
 	return a, nil
 }
