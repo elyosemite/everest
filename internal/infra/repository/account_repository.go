@@ -17,6 +17,10 @@ func NewInMemoryAccountRepository() *InMemoryAccountRepository {
 }
 
 func (r *InMemoryAccountRepository) Save(a *account.Account) error {
+	if _, ok := r.store[a.ID()]; ok {
+		return errors.New("account already exists")
+	}
+
 	r.store[a.ID()] = a
 	return nil
 }
