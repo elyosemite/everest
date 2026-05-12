@@ -73,3 +73,15 @@ func TestInMemoryAccountRepository_FindByUserID_NotFound(t *testing.T) {
 		t.Errorf("got %d accounts, want 0", len(results))
 	}
 }
+
+func TestInmemoryRepository_TrySaveExistingAccount(t *testing.T) {
+	repo := repository.NewInMemoryAccountRepository()
+
+	newAccount, _ := account.NewAccount("user-1", account.Savings, 100_000)
+	repo.Save(newAccount)
+
+	err := repo.Save(newAccount)
+	if err == nil {
+		t.Fatal("expected error when saving duplicate account, got nil")
+	}
+}
