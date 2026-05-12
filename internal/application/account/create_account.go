@@ -6,7 +6,7 @@ import (
 )
 
 type CreateAccountInput struct {
-	UserId         string
+	UserID         string
 	AccountType    domainaccount.AccountType
 	InitialBalance float64
 }
