@@ -24,6 +24,10 @@ type CreateAccountUserCase struct {
 	accountRepo domainaccount.Repository
 }
 
+func NewCreateAccountUseCase(userRepo user.Repository, accountRepo domainaccount.Repository) *CreateAccountUserCase {
+	return &CreateAccountUserCase{userRepo: userRepo, accountRepo: accountRepo}
+}
+
 func (uc *CreateAccountUserCase) Execute(input CreateAccountInput) (*CreateAccountOutput, error) {
 	u, err := uc.userRepo.FindByID(input.UserID)
 	if err != nil {
